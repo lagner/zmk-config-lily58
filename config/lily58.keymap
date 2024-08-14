@@ -58,6 +58,16 @@
             tapping-term-ms = <1000>;
             flavor = "tap-preferred";
         };
+
+        lt_cmds: lt_cmds {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_CMDS";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <340>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -72,11 +82,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&to 0  &kp EXCLAMATION          &kp AT_SIGN          &kp HASH                 &kp DOLLAR               &kp PERCENT                                       &kp CARET     &kp AMPERSAND             &kp ASTERISK              &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DEL
-&none  &kp Q                    &kp W                &mt_cmds LEFT_SHIFT E    &kp R                    &kp T                                             &kp Y         &kp U                     &mt_cmds RSHIFT I         &kp O                 &kp P                  &none
-&none  &kp A                    &mt_cmds LEFT_ALT S  &mt_cmds LEFT_COMMAND D  &mt_cmds LEFT_CONTROL F  &kp G                                             &kp H         &mt_cmds RIGHT_CONTROL J  &mt_cmds RIGHT_COMMAND K  &mt_cmds RIGHT_ALT L  &kp SEMI               &none
-&none  &mt_cmds LEFT_COMMAND Z  &kp X                &kp C                    &kp V                    &mt_zmk 3 B  &kp BACKSPACE    &lt 4 SINGLE_QUOTE  &mt_zmk 3 N   &kp M                     &kp COMMA                 &kp DOT               &kp FSLH               &none
-                                                     &kp LEFT_BRACKET         &sl 1                    &lt 1 TAB    &lt 2 SPACE      &lt 1 ENTER         &lt 2 ESCAPE  &switch_lang              &kp RIGHT_BRACKET
+&to 0  &kp EXCLAMATION          &kp AT_SIGN          &kp HASH                 &kp DOLLAR               &kp PERCENT                                              &kp CARET               &kp AMPERSAND             &kp ASTERISK              &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DEL
+&none  &kp Q                    &kp W                &lt_cmds 1 E             &kp R                    &kp T                                                    &kp Y                   &kp U                     &lt_cmds 2 I              &kp O                 &kp P                  &none
+&none  &kp A                    &mt_cmds LEFT_ALT S  &mt_cmds LEFT_COMMAND D  &mt_cmds LEFT_CONTROL F  &kp G                                                    &kp H                   &mt_cmds RIGHT_CONTROL J  &mt_cmds RIGHT_COMMAND K  &mt_cmds RIGHT_ALT L  &kp SEMI               &none
+&none  &mt_cmds LEFT_COMMAND Z  &kp X                &kp C                    &kp V                    &mt_zmk 3 B         &kp BACKSPACE    &lt 4 SINGLE_QUOTE  &mt_zmk 3 N             &kp M                     &kp COMMA                 &kp DOT               &kp FSLH               &none
+                                                     &kp LEFT_BRACKET         &sl 1                    &mt LEFT_SHIFT TAB  &lt 2 SPACE      &lt 1 ENTER         &mt RIGHT_SHIFT ESCAPE  &switch_lang              &kp RIGHT_BRACKET
             >;
         };
 
@@ -89,11 +99,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&to 0   &none      &none                  &none            &none         &none                                   &none            &none          &none           &none             &none         &kp DELETE
-&trans  &kp TILDE  &kp EQUAL              &kp EXCLAMATION  &kp AT_SIGN   &kp HASH                                &kp LEFT_BRACE   &kp MINUS      &kp UNDERSCORE  &kp LESS_THAN     &trans        &trans
-&trans  &none      &kp RIGHT_PARENTHESIS  &kp DOLLAR       &kp PERCENT   &kp CARET                               &kp LEFT_ARROW   &kp PAGE_DOWN  &kp PAGE_UP     &kp RIGHT_ARROW   &kp COLON     &kp DOUBLE_QUOTES
-&trans  &none      &kp PLUS               &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &trans    &trans  &kp RIGHT_BRACE  &kp PIPE       &kp BACKSLASH   &kp GREATER_THAN  &kp QUESTION  &trans
-                                          &trans           &trans        &trans                &trans    &trans  &trans           &to 1          &trans
+&to 0   &none         &none                  &none            &none         &none                                       &none            &none          &none           &none             &none         &kp DELETE
+&trans  &kp TILDE     &kp EQUAL              &kp EXCLAMATION  &kp AT_SIGN   &kp HASH                                    &kp LEFT_BRACE   &kp MINUS      &kp UNDERSCORE  &kp LESS_THAN     &trans        &trans
+&trans  &kp CAPSLOCK  &kp RIGHT_PARENTHESIS  &kp DOLLAR       &kp PERCENT   &kp CARET                                   &kp LEFT_ARROW   &kp PAGE_DOWN  &kp PAGE_UP     &kp RIGHT_ARROW   &kp COLON     &kp DOUBLE_QUOTES
+&trans  &caps_word    &kp PLUS               &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp DELETE    &trans  &kp RIGHT_BRACE  &kp PIPE       &kp BACKSLASH   &kp GREATER_THAN  &kp QUESTION  &trans
+                                             &trans           &trans        &trans                &trans        &trans  &trans           &to 1          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP K_VOLUME_DOWN>;
@@ -108,11 +118,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&to 0   &none            &none         &none         &trans        &bootloader                     &trans          &trans          &trans          &trans           &trans        &kp DELETE
-&trans  &kp KP_DIVIDE    &kp PLUS      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3                    &kp TILDE       &kp MINUS       &kp UNDERSCORE  &none            &kp SLASH     &none
-&trans  &kp KP_DOT       &kp NUMBER_0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6                    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp COLON     &kp DOUBLE_QUOTES
-&trans  &kp KP_MULTIPLY  &kp KP_MINUS  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans    &trans  &kp GRAVE       &kp PIPE        &kp KP_DOT      &kp RS(KP_DOT)   &kp QUESTION  &kp CAPSLOCK
-                                       &trans        &to 2         &trans        &trans    &trans  &trans          &trans          &trans
+&to 0   &none            &none         &none         &trans        &bootloader                         &trans          &trans          &trans          &trans           &trans        &kp DELETE
+&trans  &kp KP_DIVIDE    &kp PLUS      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3                        &kp TILDE       &kp MINUS       &kp UNDERSCORE  &none            &kp SLASH     &none
+&trans  &kp KP_DOT       &kp NUMBER_0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6                        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp COLON     &kp DOUBLE_QUOTES
+&trans  &kp KP_MULTIPLY  &kp KP_MINUS  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans    &kp DELETE  &kp GRAVE       &kp PIPE        &kp KP_DOT      &kp RS(KP_DOT)   &kp QUESTION  &kp CAPSLOCK
+                                       &trans        &to 2         &trans        &trans    &trans      &trans          &trans          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
