@@ -45,7 +45,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <320>;
+            tapping-term-ms = <340>;
             flavor = "balanced";
         };
 
@@ -72,11 +72,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&to 0                   &kp EXCLAMATION  &kp AT_SIGN          &kp HASH                 &kp DOLLAR  &kp PERCENT                                      &kp CARET    &kp AMPERSAND  &kp ASTERISK              &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DEL
-&kp TAB                 &kp Q            &kp W                &mt_cmds LEFT_SHIFT E    &kp R       &kp T                                            &kp Y        &kp U          &mt_cmds RSHIFT I         &kp O                 &kp P                  &kp LEFT_BRACKET
-&mt_tui LEFT_SHIFT TAB  &kp A            &mt_cmds LEFT_ALT S  &mt_cmds LEFT_COMMAND D  &kp F       &kp G                                            &kp H        &kp J          &mt_cmds RIGHT_COMMAND K  &mt_cmds RIGHT_ALT L  &kp SEMI               &kp SINGLE_QUOTE
-&kp LCTRL               &kp Z            &kp X                &mt_cmds LEFT_CONTROL C  &kp V       &mt_zmk 3 B       &kp BACKSPACE    &lt 4 ESCAPE  &mt_zmk 3 N  &kp M          &mt_cmds RCTRL COMMA      &kp DOT               &kp FSLH               &mt_tui RIGHT_SHIFT RIGHT_BRACKET
-                                                              &kp LEFT_ALT             &sl 1       &kp LEFT_COMMAND  &lt 2 SPACE      &lt 1 ENTER   &sl 2        &kp RIGHT_ALT  &switch_lang
+&to 0                   &kp EXCLAMATION  &kp AT_SIGN          &kp HASH                 &kp DOLLAR               &kp PERCENT                                     &kp CARET    &kp AMPERSAND             &kp ASTERISK                  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DEL
+&kp ESCAPE              &kp Q            &kp W                &mt_cmds LEFT_SHIFT E    &kp R                    &kp T                                           &kp Y        &kp U                     &mt_cmds RSHIFT I             &kp O                 &kp P                  &kp LEFT_BRACKET
+&mt_tui LEFT_SHIFT TAB  &kp A            &mt_cmds LEFT_ALT S  &mt_cmds LEFT_COMMAND D  &kp F                    &kp G                                           &kp H        &kp J                     &mt_cmds RIGHT_COMMAND K      &mt_cmds RIGHT_ALT L  &kp SEMI               &kp SINGLE_QUOTE
+&kp LCTRL               &kp Z            &kp X                &mt_cmds LEFT_CONTROL C  &mt_cmds LEFT_CONTROL V  &mt_zmk 3 B       &kp BACKSPACE    &lt 4 TAB    &mt_zmk 3 N  &mt_cmds RIGHT_CONTROL M  &mt_cmds RIGHT_CONTROL COMMA  &kp DOT               &kp FSLH               &kp RIGHT_BRACKET
+                                                              &kp LEFT_ALT             &sl 1                    &kp LEFT_COMMAND  &lt 2 SPACE      &lt 1 ENTER  &sl 2        &kp RIGHT_ALT             &switch_lang
             >;
         };
 
@@ -89,11 +89,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&to 0   &none       &none                  &none            &none         &none                                   &none            &none          &none           &none             &none         &kp DELETE
-&trans  &kp TILDE   &kp EQUAL              &kp EXCLAMATION  &kp AT_SIGN   &kp HASH                                &kp LEFT_BRACE   &kp MINUS      &kp UNDERSCORE  &kp LESS_THAN     &trans        &trans
-&trans  &kp KP_DOT  &kp RIGHT_PARENTHESIS  &kp DOLLAR       &kp PERCENT   &kp CARET                               &kp LEFT_ARROW   &kp PAGE_DOWN  &kp PAGE_UP     &kp RIGHT_ARROW   &kp COLON     &kp DOUBLE_QUOTES
-&trans  &kp GRAVE   &kp PLUS               &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &trans    &trans  &kp RIGHT_BRACE  &kp PIPE       &kp BACKSLASH   &kp GREATER_THAN  &kp QUESTION  &trans
-                                           &trans           &trans        &trans                &trans    &trans  &trans           &to 1          &trans
+&to 0   &none      &none                  &none            &none         &none                                   &none            &none          &none           &none             &none         &kp DELETE
+&trans  &kp TILDE  &kp EQUAL              &kp EXCLAMATION  &kp AT_SIGN   &kp HASH                                &kp LEFT_BRACE   &kp MINUS      &kp UNDERSCORE  &kp LESS_THAN     &trans        &trans
+&trans  &none      &kp RIGHT_PARENTHESIS  &kp DOLLAR       &kp PERCENT   &kp CARET                               &kp LEFT_ARROW   &kp PAGE_DOWN  &kp PAGE_UP     &kp RIGHT_ARROW   &kp COLON     &kp DOUBLE_QUOTES
+&trans  &none      &kp PLUS               &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &trans    &trans  &kp RIGHT_BRACE  &kp PIPE       &kp BACKSLASH   &kp GREATER_THAN  &kp QUESTION  &trans
+                                          &trans           &trans        &trans                &trans    &trans  &trans           &to 1          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP K_VOLUME_DOWN>;
@@ -108,11 +108,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&to 0   &none         &none         &none         &trans        &bootloader                     &trans          &trans          &trans          &trans           &trans         &kp DELETE
-&trans  &kp GRAVE     &kp PLUS      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3                    &kp LEFT_BRACE  &kp MINUS       &kp UNDERSCORE  &kp RIGHT_BRACE  &kp BACKSLASH  &kp LESS_THAN
-&trans  &kp ASTERISK  &kp NUMBER_0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6                    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp COLON      &kp DOUBLE_QUOTES
-&trans  &kp KP_DOT    &kp KP_COMMA  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans    &trans  &kp BACKSLASH   &kp PIPE        &kp KP_DOT      &kp RS(KP_DOT)   &kp QUESTION   &kp CAPSLOCK
-                                    &trans        &to 2         &trans        &trans    &trans  &trans          &trans          &trans
+&to 0   &none            &none         &none         &trans        &bootloader                     &trans          &trans          &trans          &trans           &trans        &kp DELETE
+&trans  &kp KP_DIVIDE    &kp PLUS      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3                    &kp TILDE       &kp MINUS       &kp UNDERSCORE  &none            &kp SLASH     &none
+&trans  &kp KP_DOT       &kp NUMBER_0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6                    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp COLON     &kp DOUBLE_QUOTES
+&trans  &kp KP_MULTIPLY  &kp KP_MINUS  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans    &trans  &kp GRAVE       &kp PIPE        &kp KP_DOT      &kp RS(KP_DOT)   &kp QUESTION  &kp CAPSLOCK
+                                       &trans        &to 2         &trans        &trans    &trans  &trans          &trans          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -130,11 +130,11 @@
 
         Advanced {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans   &trans   &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                               &kp F7             &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans  &trans  &trans  &trans  &kp C_VOLUME_UP                      &kp C_VOLUME_UP    &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &kp C_MUTE                           &kp C_MUTE         &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &kp C_VOLUME_DOWN  &trans    &trans  &kp C_VOLUME_DOWN  &trans  &trans  &trans   &trans   &trans
+                        &trans  &trans  &trans             &trans    &trans  &trans             &trans  &trans
             >;
         };
     };
