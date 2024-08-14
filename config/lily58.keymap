@@ -11,11 +11,14 @@
 #include <dt-bindings/zmk/outputs.h>
 
 &mt {
-    tapping-term-ms = <350>;
+    tapping-term-ms = <280>;
     flavor = "tap-preferred";
 };
 
-&lt { tapping-term-ms = <350>; };
+&lt {
+    tapping-term-ms = <280>;
+    flavor = "hold-preferred";
+};
 
 / {
     macros {
@@ -36,13 +39,23 @@
             bindings = <&kp>, <&kp>;
         };
 
-        mt_home_row: mt_home_row {
+        mt_cmds: mt_cmds {
             compatible = "zmk,behavior-hold-tap";
-            label = "MT_HOME_ROW";
+            label = "MT_CMDS";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <320>;
+            flavor = "balanced";
+        };
+
+        mt_zmk: mt_zmk {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_ZMK";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <1000>;
             flavor = "tap-preferred";
         };
     };
@@ -59,11 +72,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&to 0                   &kp EXCLAMATION  &kp AT_SIGN              &kp HASH                     &kp DOLLAR  &kp PERCENT                                      &kp CARET  &kp AMPERSAND  &kp ASTERISK                  &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS  &kp DEL
-&kp TAB                 &kp Q            &kp W                    &mt_home_row LEFT_SHIFT E    &kp R       &kp T                                            &kp Y      &kp U          &mt_home_row RSHIFT I         &kp O                     &kp P                  &kp LEFT_BRACE
-&mt_tui LEFT_SHIFT TAB  &kp A            &mt_home_row LEFT_ALT S  &mt_home_row LEFT_COMMAND D  &kp F       &kp G                                            &kp H      &kp J          &mt_home_row RIGHT_COMMAND K  &mt_home_row RIGHT_ALT L  &kp SEMI               &kp SINGLE_QUOTE
-&kp LCTRL               &kp Z            &kp X                    &mt_home_row LEFT_CONTROL C  &kp V       &lt 3 B           &kp BACKSPACE    &lt 4 ESCAPE  &lt 3 N    &kp M          &mt_home_row RCTRL COMMA      &kp DOT                   &kp FSLH               &mt_tui RIGHT_SHIFT RIGHT_BRACKET
-                                                                  &kp LEFT_ALT                 &sl 1       &kp LEFT_COMMAND  &lt 2 SPACE      &lt 1 ENTER   &sl 2      &kp RIGHT_ALT  &switch_lang
+&to 0                   &kp EXCLAMATION  &kp AT_SIGN          &kp HASH                 &kp DOLLAR  &kp PERCENT                                      &kp CARET    &kp AMPERSAND  &kp ASTERISK              &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DEL
+&kp TAB                 &kp Q            &kp W                &mt_cmds LEFT_SHIFT E    &kp R       &kp T                                            &kp Y        &kp U          &mt_cmds RSHIFT I         &kp O                 &kp P                  &kp LEFT_BRACE
+&mt_tui LEFT_SHIFT TAB  &kp A            &mt_cmds LEFT_ALT S  &mt_cmds LEFT_COMMAND D  &kp F       &kp G                                            &kp H        &kp J          &mt_cmds RIGHT_COMMAND K  &mt_cmds RIGHT_ALT L  &kp SEMI               &kp SINGLE_QUOTE
+&kp LCTRL               &kp Z            &kp X                &mt_cmds LEFT_CONTROL C  &kp V       &mt_zmk 3 B       &kp BACKSPACE    &lt 4 ESCAPE  &mt_zmk 3 N  &kp M          &mt_cmds RCTRL COMMA      &kp DOT               &kp FSLH               &mt_tui RIGHT_SHIFT RIGHT_BRACKET
+                                                              &kp LEFT_ALT             &sl 1       &kp LEFT_COMMAND  &lt 2 SPACE      &lt 1 ENTER   &sl 2        &kp RIGHT_ALT  &switch_lang
             >;
         };
 
