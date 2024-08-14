@@ -73,7 +73,7 @@
 
             bindings = <
 &to 0                   &kp EXCLAMATION  &kp AT_SIGN          &kp HASH                 &kp DOLLAR  &kp PERCENT                                      &kp CARET    &kp AMPERSAND  &kp ASTERISK              &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DEL
-&kp TAB                 &kp Q            &kp W                &mt_cmds LEFT_SHIFT E    &kp R       &kp T                                            &kp Y        &kp U          &mt_cmds RSHIFT I         &kp O                 &kp P                  &kp LEFT_BRACE
+&kp TAB                 &kp Q            &kp W                &mt_cmds LEFT_SHIFT E    &kp R       &kp T                                            &kp Y        &kp U          &mt_cmds RSHIFT I         &kp O                 &kp P                  &kp LEFT_BRACKET
 &mt_tui LEFT_SHIFT TAB  &kp A            &mt_cmds LEFT_ALT S  &mt_cmds LEFT_COMMAND D  &kp F       &kp G                                            &kp H        &kp J          &mt_cmds RIGHT_COMMAND K  &mt_cmds RIGHT_ALT L  &kp SEMI               &kp SINGLE_QUOTE
 &kp LCTRL               &kp Z            &kp X                &mt_cmds LEFT_CONTROL C  &kp V       &mt_zmk 3 B       &kp BACKSPACE    &lt 4 ESCAPE  &mt_zmk 3 N  &kp M          &mt_cmds RCTRL COMMA      &kp DOT               &kp FSLH               &mt_tui RIGHT_SHIFT RIGHT_BRACKET
                                                               &kp LEFT_ALT             &sl 1       &kp LEFT_COMMAND  &lt 2 SPACE      &lt 1 ENTER   &sl 2        &kp RIGHT_ALT  &switch_lang
