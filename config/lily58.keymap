@@ -31,14 +31,6 @@
     };
 
     behaviors {
-        mt_tui: tap_unless_interrupted {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <350>;
-            bindings = <&kp>, <&kp>;
-        };
-
         mt_cmds: mt_cmds {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_CMDS";
@@ -68,6 +60,16 @@
             tapping-term-ms = <340>;
             flavor = "tap-preferred";
         };
+
+        mt_shifts: mt_shifts {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_SHIFTS";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <260>;
+            flavor = "hold-preferred";
+        };
     };
 
     keymap {
@@ -82,11 +84,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&to 0  &kp EXCLAMATION          &kp AT_SIGN          &kp HASH                 &kp DOLLAR               &kp PERCENT                                              &kp CARET               &kp AMPERSAND             &kp ASTERISK              &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DEL
-&none  &kp Q                    &kp W                &lt_cmds 1 E             &kp R                    &kp T                                                    &kp Y                   &kp U                     &lt_cmds 2 I              &kp O                 &kp P                  &none
-&none  &kp A                    &mt_cmds LEFT_ALT S  &mt_cmds LEFT_COMMAND D  &mt_cmds LEFT_CONTROL F  &kp G                                                    &kp H                   &mt_cmds RIGHT_CONTROL J  &mt_cmds RIGHT_COMMAND K  &mt_cmds RIGHT_ALT L  &kp SEMI               &none
-&none  &mt_cmds LEFT_COMMAND Z  &kp X                &kp C                    &kp V                    &mt_zmk 3 B         &kp BACKSPACE    &lt 4 SINGLE_QUOTE  &mt_zmk 3 N             &kp M                     &kp COMMA                 &kp DOT               &kp FSLH               &none
-                                                     &kp LEFT_BRACKET         &sl 1                    &mt LEFT_SHIFT TAB  &lt 2 SPACE      &lt 1 ENTER         &mt RIGHT_SHIFT ESCAPE  &switch_lang              &kp RIGHT_BRACKET
+&to 0  &kp EXCLAMATION          &kp AT_SIGN          &kp HASH                 &kp DOLLAR               &kp PERCENT                                                     &kp CARET                      &kp AMPERSAND             &kp ASTERISK              &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DEL
+&none  &kp Q                    &kp W                &lt_cmds 1 E             &kp R                    &kp T                                                           &kp Y                          &kp U                     &lt_cmds 2 I              &kp O                 &kp P                  &none
+&none  &kp A                    &mt_cmds LEFT_ALT S  &mt_cmds LEFT_COMMAND D  &mt_cmds LEFT_CONTROL F  &kp G                                                           &kp H                          &mt_cmds RIGHT_CONTROL J  &mt_cmds RIGHT_COMMAND K  &mt_cmds RIGHT_ALT L  &kp SEMI               &none
+&none  &mt_cmds LEFT_COMMAND Z  &kp X                &kp C                    &kp V                    &mt_zmk 3 B                &kp BACKSPACE    &lt 4 SINGLE_QUOTE  &mt_zmk 3 N                    &kp M                     &kp COMMA                 &kp DOT               &kp FSLH               &none
+                                                     &kp LEFT_BRACKET         &sl 1                    &mt_shifts LEFT_SHIFT TAB  &lt 2 SPACE      &lt 1 ENTER         &mt_shifts RIGHT_SHIFT ESCAPE  &switch_lang              &kp RIGHT_BRACKET
             >;
         };
 
