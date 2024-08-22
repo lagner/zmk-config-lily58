@@ -25,7 +25,10 @@
         switch_lang: switch_lang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&sk RALT &kp SPACE>;
+            bindings = <&macro_press &kp RALT>
+                , <&macro_tap &kp SPACE>
+                , <&macro_release &kp RALT>
+                ;
             label = "SWITCH_LANG";
         };
     };
